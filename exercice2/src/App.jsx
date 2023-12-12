@@ -1,31 +1,19 @@
 import { useState } from "react";
 
 function App() {
+  const [compteur, setCompteur] = useState(0);
 
-  const [nom, setNom] = useState("");
-  const [prenom, setPrenom] = useState("");
-
-  const handlechaneNom = (event) => {
-    setNom(event.target.value);
-
+  const handleClick = () => {
+    let tmp = compteur
+    tmp++
+    setCompteur(tmp)
   }
 
-
-  const handlechanePrenom = (event) => {
-    setPrenom(event.target.value);
-
-    
-  }
 
   return (
     <div>
-      <input type="text" value={nom} onChange={handlechaneNom}/>
-      <input type="text" value={prenom} onChange={handlechanePrenom}/>
-      <div>
-        Bonjour {prenom} {nom}
+    <button onClick={handleClick}>Compteur = {compteur}</button>
       </div>
-
-    </div>
   );
 }
 
